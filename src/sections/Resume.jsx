@@ -5,6 +5,7 @@ import {
   FileDown,
   CalendarDays,
   MapPin,
+  Eye,
 } from "lucide-react";
 
 function Resume() {
@@ -90,13 +91,31 @@ function Resume() {
         <div className="resume-download">
           <div>
             <h3>Want to know more about me?</h3>
-            <p>Download my CV for more details about my background.</p>
+            <p>
+              View or download my CV for more details about my background.
+            </p>
           </div>
 
-          <a href="/cv.pdf" download className="btn btn-primary">
-            <FileDown size={18} />
-            Download CV
-          </a>
+          <div className="resume-buttons">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              <Eye size={18} />
+              View CV
+            </a>
+
+            <a
+              href="/resume.pdf"
+              download="Seam-Piseth-CV.pdf"
+              className="btn btn-primary"
+            >
+              <FileDown size={18} />
+              Download CV
+            </a>
+          </div>
         </div>
       </div>
     </section>
