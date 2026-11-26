@@ -11,32 +11,66 @@ import {
 function Resume() {
   const education = [
     {
-      title: "Bachelor's Degree in Computer Science",
+      title: "Bachelor's Degree in Computer Science and Engineering",
       institution: "Royal University of Phnom Penh (RUPP)",
-      period: "Completed",
+      period: "2022 – 2026",
+      image: "/journey/rupp.jpg",
       description:
-        "Studied computer science with a focus on programming, software development, and information technology.",
+        "Completed a four-year degree focused on computer science, programming, software development, and information technology.",
     },
   ];
 
   const experience = [
     {
-      title: "Associate Project",
-      company: "DDD",
-      period: "Previous Experience",
+      title: "Customer Service Staff",
+      company: "Big Apple Donut and Coffee",
+      period: "October 2024 – November 2025",
+      image: "/journey/big-apple.jpg",
       description:
-        "Worked with project workflows, data management, spreadsheets, and digital content classification.",
+        "Provided customer service, supported daily operations, and worked collaboratively to maintain a positive customer experience.",
+    },
+    {
+      title: "Associate Project",
+      company: "Digital Divide Data (DDD)",
+      period: "May 2026 – November 2026",
+      image: "/journey/ddd.png",
+      description:
+        "Worked on data annotation, content classification, project workflows, and data management using Excel and Google Sheets.",
     },
   ];
+
+  const renderCard = (item) => (
+    <article className="resume-card" key={item.title}>
+      <div className="resume-card-image">
+        <img src={item.image} alt={item.company || item.institution} />
+      </div>
+
+      <div className="resume-card-content">
+        <span className="resume-period">
+          <CalendarDays size={15} />
+          {item.period}
+        </span>
+
+        <h4>{item.title}</h4>
+
+        <p className="resume-company">
+          <MapPin size={15} />
+          {item.institution || item.company}
+        </p>
+
+        <p>{item.description}</p>
+      </div>
+    </article>
+  );
 
   return (
     <section className="resume section" id="resume">
       <div className="container">
         <div className="section-heading">
-          <span className="section-label">MY BACKGROUND</span>
+          <span className="section-label">MY JOURNEY</span>
           <h2>Education & Experience</h2>
           <p>
-            My academic background and professional experience.
+            My academic background and professional journey.
           </p>
         </div>
 
@@ -47,44 +81,16 @@ function Resume() {
               Education
             </h3>
 
-            {education.map((item) => (
-              <div className="resume-card" key={item.title}>
-                <span className="resume-period">
-                  <CalendarDays size={15} />
-                  {item.period}
-                </span>
-
-                <h4>{item.title}</h4>
-                <p className="resume-company">
-                  <MapPin size={15} />
-                  {item.institution}
-                </p>
-                <p>{item.description}</p>
-              </div>
-            ))}
+            {education.map(renderCard)}
           </div>
 
           <div className="resume-column">
             <h3 className="resume-column-title">
               <BriefcaseBusiness size={22} />
-              Experience
+              Work Experience
             </h3>
 
-            {experience.map((item) => (
-              <div className="resume-card" key={item.title}>
-                <span className="resume-period">
-                  <CalendarDays size={15} />
-                  {item.period}
-                </span>
-
-                <h4>{item.title}</h4>
-                <p className="resume-company">
-                  <MapPin size={15} />
-                  {item.company}
-                </p>
-                <p>{item.description}</p>
-              </div>
-            ))}
+            {experience.map(renderCard)}
           </div>
         </div>
 

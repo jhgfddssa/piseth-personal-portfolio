@@ -936,3 +936,373 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ========================================
+   MY JOURNEY SECTION
+======================================== */
+
+.journey {
+  background: #f8fafc;
+}
+
+.journey-timeline {
+  max-width: 900px;
+  margin: 55px auto 80px;
+  position: relative;
+}
+
+.journey-timeline::before {
+  content: "";
+  position: absolute;
+  left: 23px;
+  top: 15px;
+  bottom: 15px;
+  width: 2px;
+  background: #dbe4f0;
+}
+
+.journey-item {
+  position: relative;
+  padding-left: 70px;
+  margin-bottom: 35px;
+}
+
+.journey-marker {
+  position: absolute;
+  left: 0;
+  top: 25px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #2563eb;
+  border: 2px solid #dbeafe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.journey-card {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journey-card:hover,
+.journey-project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.09);
+}
+
+.journey-image {
+  min-height: 230px;
+  overflow: hidden;
+}
+
+.journey-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 230px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.journey-card:hover .journey-image img,
+.journey-project-card:hover .journey-project-image img {
+  transform: scale(1.05);
+}
+
+.journey-content {
+  padding: 25px;
+}
+
+.journey-category {
+  display: inline-block;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.journey-period,
+.journey-organization {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #64748b;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.journey-content h3 {
+  color: #0f172a;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.journey-description {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* PROJECT EXPERIENCE */
+
+.journey-projects {
+  margin-top: 80px;
+}
+
+.journey-project-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 40px;
+}
+
+.journey-project-heading h3 {
+  font-size: 30px;
+  color: #0f172a;
+  margin: 12px 0;
+}
+
+.journey-project-heading p {
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.journey-project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.journey-project-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journey-project-image {
+  height: 190px;
+  overflow: hidden;
+  background: #e2e8f0;
+}
+
+.journey-project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.journey-project-content {
+  padding: 22px;
+}
+
+.journey-project-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.journey-project-content h4 {
+  font-size: 19px;
+  color: #0f172a;
+  margin: 12px 0;
+}
+
+.journey-project-content p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+.journey-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.journey-tech span {
+  background: #f1f5f9;
+  color: #334155;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.journey-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 16px;
+}
+
+.journey-project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.journey-project-links a:hover {
+  color: #1e40af;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+  .journey-timeline {
+    margin-top: 35px;
+  }
+
+  .journey-item {
+    padding-left: 55px;
+  }
+
+  .journey-marker {
+    width: 40px;
+    height: 40px;
+  }
+
+  .journey-timeline::before {
+    left: 19px;
+  }
+
+  .journey-card {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-image {
+    height: 200px;
+    min-height: auto;
+  }
+
+  .journey-image img {
+    height: 200px;
+    min-height: auto;
+  }
+
+  .journey-content {
+    padding: 20px;
+  }
+
+  .journey-project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-projects {
+    margin-top: 55px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .journey-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-card,
+  .journey-project-card,
+  .journey-image img,
+  .journey-project-image img {
+    transition: none;
+  }
+}
+
+/* Resume image cards */
+
+.resume-card-image {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.resume-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.resume-card:hover .resume-card-image img {
+  transform: scale(1.02);
+}
+
+
+.resume-card-content {
+  padding: 22px;
+}
+
+.resume-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .resume-card-image {
+    height: 170px;
+  }
+
+  .resume-card-content {
+    padding: 18px;
+  }
+
+  .resume-buttons {
+    width: 100%;
+  }
+}
+
+/* Project screenshot images */
+.project-image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+  .project-image {
+    height: 200px;
+  }
+}

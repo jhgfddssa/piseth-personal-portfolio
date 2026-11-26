@@ -22,9 +22,8 @@ function Projects() {
       ],
       github: "https://github.com/jhgfddssa/SmartBank",
       demo: "https://smart-bank-six-chi.vercel.app/",
+      image: "/journey/smartbank.png",
       icon: Landmark,
-      previewLabel: "SMARTBANK",
-      previewDescription: "Banking Application Demo",
     },
     {
       title: "Retail Management System",
@@ -45,9 +44,8 @@ function Projects() {
         "https://github.com/jhgfddssa/Retail-Management-System",
       demo:
         "https://retail-management-system-gamma.vercel.app/",
+      image: "/journey/retail.png",
       icon: ShoppingCart,
-      previewLabel: "RETAIL MANAGEMENT",
-      previewDescription: "Retail Management System",
     },
     {
       title: "Shop Management System",
@@ -63,9 +61,8 @@ function Projects() {
       ],
       github:
         "https://github.com/jhgfddssa/ShopManagementSystem",
+      image: "/journey/shop-management.png",
       icon: Store,
-      previewLabel: "SHOP MANAGEMENT",
-      previewDescription: "C# Desktop Application",
     },
   ];
 
@@ -83,16 +80,14 @@ function Projects() {
 
         <div className="projects-grid">
           {projects.map((project) => {
-            const ProjectIcon = project.icon;
-
             return (
               <article className="project-card" key={project.title}>
                 <div className="project-image">
-                  <div className="project-preview">
-                    <ProjectIcon size={64} strokeWidth={1.3} />
-                    <span>{project.previewLabel}</span>
-                    <small>{project.previewDescription}</small>
-                  </div>
+                  <img
+                    src={project.image}
+                    alt={`${project.title} screenshot`}
+                    loading="lazy"
+                  />
                 </div>
 
                 <div className="project-content">
